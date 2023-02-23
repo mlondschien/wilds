@@ -8,6 +8,7 @@ from algorithms.DANN import DANN
 from algorithms.groupDRO import GroupDRO
 from algorithms.deepCORAL import DeepCORAL
 from algorithms.IRM import IRM
+from algorithms.anchor import Anchor
 from algorithms.fixmatch import FixMatch
 from algorithms.pseudolabel import PseudoLabel
 from algorithms.noisy_student import NoisyStudent
@@ -123,6 +124,14 @@ def initialize_algorithm(config, datasets, train_grouper, unlabeled_dataset=None
             grouper=train_grouper,
             loss=loss,
             unlabeled_loss=unlabeled_loss,
+            metric=metric,
+            n_train_steps=n_train_steps)
+    elif config.algorithm == "anchor":
+        algorithm = Anchor(
+            config=config,
+            d_out=d_out,
+            grouper=train_grouper,
+            loss=loss,
             metric=metric,
             n_train_steps=n_train_steps)
     else:

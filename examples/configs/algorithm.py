@@ -21,6 +21,15 @@ algorithm_defaults = {
         'randaugment_n': 2,
         'additional_train_transform': 'randaugment',     # Apply strong augmentation to labeled & unlabeled examples
     },
+    'anchor': {
+        'train_loader': 'group',
+        'uniform_over_groups': True,
+        'distinct_groups': True,
+        'eval_loader': 'standard',
+        'anchor_penalty': 1.,
+        # 'randaugment_n': 2,
+        # 'additional_train_transform': 'randaugment',     # Apply strong augmentation to labeled & unlabeled examples
+    },
     'IRM': {
         'train_loader': 'group',
         'uniform_over_groups': True,
