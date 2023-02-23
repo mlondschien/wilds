@@ -23,7 +23,7 @@ algorithm_defaults = {
     },
     'anchor': {
         'train_loader': 'group',
-        'uniform_over_groups': True,
+        'uniform_over_groups': False,
         'distinct_groups': True,
         'eval_loader': 'standard',
         'anchor_penalty': 1.,

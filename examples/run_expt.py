@@ -117,6 +117,7 @@ def main():
     parser.add_argument('--soft_pseudolabels', default=False, type=parse_bool, const=True, nargs='?')
     parser.add_argument('--algo_log_metric')
     parser.add_argument('--process_pseudolabels_function', choices=supported.process_pseudolabels_functions)
+    parser.add_argument('--anchor_penalty', type=float, default=1.0)
 
     # Model selection
     parser.add_argument('--val_metric')
